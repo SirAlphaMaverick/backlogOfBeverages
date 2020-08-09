@@ -44,71 +44,87 @@ export default class Beveragelog extends Component {
     render() {
         return (
             <div>
-                <div className="container">
-                    <ReactTable
-                        data={this.state.count}
-                        columns={[
-                            {
-                                columns: [
-
-                                    {
-                                        Header: "Type of Beverage",
-                                        accessor: "type"
-                                    },
-
-                                    {
-                                        Header: "Count",
-                                        accessor: "count"
-                                    }
-                                ]
-                            },
-
-                        ]}
-                        defaultSorted={[
-                            {
-                                id: "count",
-                                desc: true
-                            }
-                        ]}
-                        pageSize={this.state.count.length}
-                        className="-striped -highlight"
-                    />
-                </div>
-                <br></br>
-                <ReactTable
-                    data={this.state.beveragelog}
-                    columns={[
-                        {
-                            columns: [
-
+                <div className="container" style={{ paddingTop: '2.5%' }}>
+                    <div className="small-container" style={{ paddingBottom: '2.5%' }}>
+                        <h4>This is a summarized version of logs with respect to number and type of beverages</h4>
+                    </div>
+                    <div style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+                        <ReactTable
+                            data={this.state.count}
+                            columns={[
                                 {
-                                    Header: "Name",
-                                    accessor: "name"
+                                    columns: [
+
+                                        {
+                                            Header: "Type of Beverage",
+                                            accessor: "type"
+                                        },
+
+                                        {
+                                            Header: "Count",
+                                            accessor: "count"
+                                        }
+                                    ]
                                 },
 
+                            ]}
+                            defaultSorted={[
                                 {
-                                    Header: "Beverage",
-                                    accessor: "beverage"
-                                },
-
-                                {
-                                    Header: "Type",
-                                    accessor: "type"
+                                    id: "count",
+                                    desc: true
                                 }
-                            ]
-                        },
+                            ]}
+                            pageSize={this.state.count.length}
+                            className="-striped -highlight"
+                        />
+                    </div>
+                </div>
 
-                    ]}
-                    defaultSorted={[
-                        {
-                            id: "name",
-                            asc: true
-                        }
-                    ]}
-                    pageSize={this.state.beveragelog.length}
-                    className="-striped -highlight"
-                />
+                <div className="container" style={{ paddingTop: '5%', paddingBottom: '5%' }}>
+                    <div className="container" style={{ paddingBottom: '2.5%' }} >
+                        <h4> This is the main backlog of all the beverages drank, sorted with respect to name.</h4>
+                    </div>
+                    <div style={{ paddingLeft: '10%', paddingRight: '10%' }}>
+                        <ReactTable
+                            data={this.state.beveragelog}
+                            columns={[
+                                {
+                                    columns: [
+
+                                        {
+                                            Header: "Name",
+                                            accessor: "name"
+                                        },
+
+                                        {
+                                            Header: "Beverage",
+                                            accessor: "beverage"
+                                        },
+
+                                        {
+                                            Header: "Type",
+                                            accessor: "type"
+                                        }
+                                    ]
+                                },
+
+                            ]}
+                            defaultSorted={[
+                                {
+                                    id: "name",
+                                    asc: true
+                                }
+                            ]}
+                            PageSize={this.state.beveragelog.length}
+                            style={{
+                                height: "400px"
+                            }}
+                            className="-striped -highlight"
+                        />
+                    </div>
+                </div>
             </div>
+
         );
     }
 }
