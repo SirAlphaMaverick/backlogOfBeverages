@@ -8,5 +8,5 @@ The project was created by having basic features in mind like:
 To run this, clone the repository, install the dependenceies in /backend folder and in the main folder(Client side), 
 Add a ".env" file in "backend" folder to connect the application with your MongoDB and finally to run the application follow the following steps:
     1. Open a terminal and type ->  "npm start".
-    2. Open a terminal and type ->  "cd backend" -> "npm start" or "nodemon start".
+    2. Open a terminal and type ->  "cd backend" -> "nodemon server.js".
 
