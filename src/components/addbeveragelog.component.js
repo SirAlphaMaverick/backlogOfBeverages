@@ -11,7 +11,6 @@ export default class AddBeveragelog extends Component {
 
         this.onChangeBeverage = this.onChangeBeverage.bind(this);
         this.onChangeName = this.onChangeName.bind(this);
-        this.handleClick = this.handleClick.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -66,14 +65,6 @@ export default class AddBeveragelog extends Component {
 
     }
 
-    handleClick() {
-        this.setState({
-            isLogAdded: true
-        })
-        console.log(this.state.isLogAdded);
-    }
-
-
     render() {
         return (
             <div className="container" style={{ paddingTop: '5%', paddingBottom: '5%' }}>
@@ -107,7 +98,7 @@ export default class AddBeveragelog extends Component {
                 </div>
                     : <div>
                         <h3>The Log was Added!</h3>
-                        <Link to="/add"><button className="btn btn-primary" onClick={this.handleClick}>Click here to added a new log.</button></Link>
+                        <Link to="/add"><button className="btn btn-primary" onClick={this.handleClick}>Click here to add a new log.</button></Link>
                     </div>}
             </div>
         );
